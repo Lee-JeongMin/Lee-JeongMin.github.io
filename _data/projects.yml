@@ -1,0 +1,38 @@
+- project :
+    print : True # If 'False' is selected, it will not be displayed in 'home.html > aside > .proj-content'. 
+    modal : True # If 'True' is selected, modal can open in 'portfolio.html'. 
+    url :  # Full URL
+    image : "capstone_main.png" # path: assets/project/
+    date : 2019.03.02 - 2019.06.04
+    title : 드론을 이용한 딥러닝 기반 식물 이상탐지 시스템
+    summary : 
+    description : 드론과 물체 탐지 알고리즘을 사용해 병에 걸린 식물을들 판별하고 이를 알려주는 시스템  
+    contents :
+        - title : 1. 드론으로 비디오 촬영 및 전송
+          image : 
+          description : 
+        - title : 2. YOLOv3을 사용해 식물 이상 탐지
+          image : 
+          description : 
+        - title : 3. GUI 구현
+          image :
+          description :
+- project :
+    print : True # If 'False' is selected, it will not be displayed in 'home.html > aside > .proj-content'. 
+    modal : True # If 'True' is selected, modal can open in 'portfolio.html'. 
+    url :  https://github.com/Lee-JeongMin/multicampus_crawling # Full URL
+    image : # path: assets/project/
+    date : 2020.06.04 - 2020.06.12
+    title : 크롤링 미니 프로젝트
+    summary : 
+    description : 다양한 사이트에 맞는 크롤러를 구현하여 정보를 수집한 후, 이메일로 보내는 미니 프로젝트
+    contents :
+        - title : 1. 크롤러 구현
+          image : 
+          description : 
+        - title : 2. MariaDB에 데이터 저장
+          image : 
+          description : 
+        - title : 3. 이메일로 데이터 전송
+          image :
+          description :

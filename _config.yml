@@ -1,0 +1,49 @@
+# Site Settings
+baseurl: ""
+url : "https://Lee-JeongMin.github.io"
+
+# Blog Settings
+theme_settings :
+  title : Grape Theme
+  favicon : assets/favicon.ico
+
+  # Profile Settings
+  profile :
+    image : assets/img/photo_me.jpg
+    username : JeongMin Lee
+    description : 이정민의 기술블로그입니다😉
+    experience :
+      - start : 2020-01-06
+        end : 2020-02-14
+        experience : IBK기업은행 인턴
+    skills : 
+      - skill : python
+        value : 80  # Percent value
+        
+  # Icons
+  icons :
+    email:  leejm456@gmail.com # Full email address, e.g. "sample@google.com"
+    linkedin:  # Full URL 
+    github: Lee-JeongMin
+    gitlab: 
+    bitbucket: 
+    google_plus:
+    twitter:
+    youtube:
+    facebook:
+    instagram:
+
+  # Disqus
+  disqus_shortname :
+
+# Pagination
+paginate: 5
+paginate_path: "blog/page:num"
+
+# Build Ssttings
+sass:
+  sass_dir: _sass
+  style: :compressed
+gems: [jekyll-paginate]
+bootstrap:
+  assets: true
