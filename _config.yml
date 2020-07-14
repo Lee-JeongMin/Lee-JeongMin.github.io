@@ -4,8 +4,8 @@ url : "https://Lee-JeongMin.github.io"
 
 # Blog Settings
 theme_settings :
-  title : Grape Theme
-  favicon : assets/favicon.ico
+  title : JeongMin
+  favicon : assets/icon.ico
 
   # Profile Settings
   profile :
@@ -47,3 +47,5 @@ sass:
 gems: [jekyll-paginate]
 bootstrap:
   assets: true
+
+
