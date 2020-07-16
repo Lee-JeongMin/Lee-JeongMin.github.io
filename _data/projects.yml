@@ -21,7 +21,7 @@
     print : True # If 'False' is selected, it will not be displayed in 'home.html > aside > .proj-content'. 
     modal : True # If 'True' is selected, modal can open in 'portfolio.html'. 
     url :  https://github.com/Lee-JeongMin/multicampus_crawling # Full URL
-    image : # path: assets/project/
+    image : crawling_mini_project.png # path: assets/project/
     date : 2020.06.04 - 2020.06.12
     title : 크롤링 미니 프로젝트
     summary : 
