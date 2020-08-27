@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 딕셔너리 다중 조건으로 정렬하기
+title: 딕셔너리 키(key)와 값(value)을 기준으로 정렬하기
 subtitle : 
 tags: [Python]
 author: JeongMin Lee
