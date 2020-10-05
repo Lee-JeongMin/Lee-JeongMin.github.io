@@ -46,17 +46,17 @@
     summary : 
     description : 텍스트 마이닝을 활용하여 한국은행 금융통화위원회 의사록의 어조를 분석
     contents : 경제⋅금융용어를 인식할 수 있는 형태소 분석기(eKoNLPy) 및 감성사전을 구축하여 의사록에 담긴 의미를 파악한 후 금리를 예측한다.
-        - title : 1. Preparing Corpus
-          image : 
-          description : 데이터 목록 - 금통위 의사록, 뉴스 기사, 채권분석 리포트, 콜금리, 기준금리 | 수집기간 - 2005/01/01 ~ 2017/12/31
-        - title : 2. Pre-Processing & Feature Selection
-          image : 
-          description : eKoNLPy를 사용해 형태소 분석
-        - title : 3. Polaity Classification
-          image : polarity_score.PNG
-          description : 극성사전 구축
-        - title : 4. Sentiment Measurement
-          image : tone_s.PNG
-          description : 문장의 어조 구하기
-          image : tons_i.PNG
-          description : tone_s를 이용해 문서 전체의 어조 구하기
+        # - title : 1. Preparing Corpus
+        #   image : 
+        #   description : 데이터 목록 - 금통위 의사록, 뉴스 기사, 채권분석 리포트, 콜금리, 기준금리 | 수집기간 - 2005/01/01 ~ 2017/12/31
+        # - title : 2. Pre-Processing & Feature Selection
+        #   image : 
+        #   description : eKoNLPy를 사용해 형태소 분석
+        # - title : 3. Polaity Classification
+        #   image : polarity_score.PNG
+        #   description : 극성사전 구축
+        # - title : 4. Sentiment Measurement
+        #   image : tone_s.PNG
+        #   description : 문장의 어조 구하기
+        #   image : tons_i.PNG
+        #   description : tone_s를 이용해 문서 전체의 어조 구하기
