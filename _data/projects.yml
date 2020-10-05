@@ -9,13 +9,13 @@
     description : 드론과 물체 탐지 알고리즘을 사용해 병에 걸린 식물을들 판별하고 이를 알려주는 시스템  
     contents :
         - title : 1. 드론으로 비디오 촬영 및 전송
-          image : 
+          image :  
           description : https://github.com/choinamki/plant_anomaly_detection_dji_spark_drone
         - title : 2. YOLOv3을 사용해 식물 이상 탐지
-          image : 
+          image :  
           description : 
         - title : 3. GUI 구현
-          image :
+          image : 
           description : https://github.com/dudgns7675/Hotcorn
 - project :
     print : True # If 'False' is selected, it will not be displayed in 'home.html > aside > .proj-content'. 
@@ -34,8 +34,8 @@
           image : 
           description : 
         - title : 3. 이메일로 데이터 전송
-          image :
-          description :
+          image : 
+          description : 
 - project :
     print : True # If 'False' is selected, it will not be displayed in 'home.html > aside > .proj-content'. 
     modal : True # If 'True' is selected, modal can open in 'portfolio.html'. 
@@ -53,11 +53,11 @@
           image : 
           description : 
         - title : 3. Polaity Classification
-          image :
+          image : 
           description :
         - title : 4. Sentiment Measurement
-          image :
-          description :
+          image : 
+          description : 
         # - title : 1. Preparing Corpus
         #   image : 
         #   description : 데이터 목록 - 금통위 의사록, 뉴스 기사, 채권분석 리포트, 콜금리, 기준금리 | 수집기간 - 2005/01/01 ~ 2017/12/31
