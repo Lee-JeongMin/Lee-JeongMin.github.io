@@ -74,7 +74,7 @@
     contents : 
         - title : 1. 데이터 수집 및 정제
         - image : numeric_preprocessing.png
-          description : |+
+          description : |-
                         ㆍ 환율과 관련있는 28개의 변수를 2010-01-01 ~ 2020-09-30 약 10년 데이터 수집
                         ㆍ 휴일제거 & 미국시차를 한국시차로 맞춤
         - image : text_preprocessing.png
@@ -94,7 +94,7 @@
                         ㆍ Hierarchical Attention Network 모델(텍스트 데이터에 적용)
         - title : 3. 주요 뉴스 추출 및 검색
           image : 
-          description : >-
+          description : |+
                         ㆍ HAN 모델에서 추출한 Attention extract model에서 추출한 Attention score가 높은 수 3개를 추출 
                         ㆍ 네이버 검색 API를 사용해 TOP3의 뉴스를 검색하여 TITLE, URL, DESCRIPTION 추출
         - title : 4. 서비스 제공
