@@ -73,12 +73,10 @@
     description : 수치 및 텍스트(뉴스) 데이터를 사용해 환율 예측 및 주요 뉴스 추출 후 리포트 제공
     contents : 
         - title : 1. 데이터 수집 및 정제
-        - subtitle : <수치 데이터>
           image : numeric_preprocessing.png
           description : >-
                         ● 환율과 관련있는 28개의 변수를 2010-01-01 ~ 2020-09-30 약 10년 데이터 수집
                         ● 휴일제거 & 미국시차를 한국시차로 맞춤
-        - subtitle : <텍스트 데이터>
           image : text_preprocessing.png
           description : >-
                          ● 환율, 금리, 국내증시, 미국증시, 외국인투자 5개의 키워드를 선정하여 연합뉴스 기사제목 2010-01-01 ~ 2020-09-30 약 10년 데이터 수집
