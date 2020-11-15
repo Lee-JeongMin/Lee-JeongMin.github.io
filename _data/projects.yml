@@ -49,8 +49,8 @@
         - title : 1. Preparing Corpus
           image : 
           description : |
-                        데이터 목록 - 금통위 의사록, 뉴스 기사, 채권분석 리포트, 콜금리, 기준금리 
-                        수집기간 - 2005/01/01 ~ 2017/12/31
+                        ✔ 데이터 목록 - 금통위 의사록, 뉴스 기사, 채권분석 리포트, 콜금리, 기준금리 
+                        ✔ 수집기간 - 2005/01/01 ~ 2017/12/31
         - title : 2. Pre-Processing & Feature Selection
           image : 
           description : eKoNLPy를 사용해 형태소 분석
@@ -75,31 +75,31 @@
         - title : 1. 데이터 수집 및 정제
         - image : numeric_preprocessing.png
           description : >-
-                        ● 환율과 관련있는 28개의 변수를 2010-01-01 ~ 2020-09-30 약 10년 데이터 수집
-                        ● 휴일제거 & 미국시차를 한국시차로 맞춤
+                        ✔ 환율과 관련있는 28개의 변수를 2010-01-01 ~ 2020-09-30 약 10년 데이터 수집
+                        ✔ 휴일제거 & 미국시차를 한국시차로 맞춤
         - image : text_preprocessing.png
           description : >-
-                        ● 환율, 금리, 국내증시, 미국증시, 외국인투자 5개의 키워드를 선정하여 연합뉴스 기사제목 2010-01-01 ~ 2020-09-30 약 10년 데이터 수집
+                        ✔ 환율, 금리, 국내증시, 미국증시, 외국인투자 5개의 키워드를 선정하여 연합뉴스 기사제목 2010-01-01 ~ 2020-09-30 약 10년 데이터 수집
                           (* 2019년 기준 연합뉴스가 가장 제공량이 많음)
-                        ● 휴일제거 & 중복기사 및 특수문자 제거
-                        ● eKoNLPy를 사용해 형태소 분석(명사, 형용사, 동사, 부사만 사용)
-                        ● Tokenizer를 사용해 빈도 기반의 단어사전 구축
-                        ● 기사제목 index 변환 및 padding 처리
+                        ✔ 휴일제거 & 중복기사 및 특수문자 제거
+                        ✔ eKoNLPy를 사용해 형태소 분석(명사, 형용사, 동사, 부사만 사용)
+                        ✔ Tokenizer를 사용해 빈도 기반의 단어사전 구축
+                        ✔ 기사제목 index 변환 및 padding 처리
         - title : 2. 모델 학습
         - image : darnn.PNG
           description : >-
-                        ● Dual-Stage Attention Based Recurrent Neural Network 모델 (수치 데이터에 적용)
+                        ✔ Dual-Stage Attention Based Recurrent Neural Network 모델 (수치 데이터에 적용)
         - image : han.PNG
           description : >-
-                        ● Hierarchical Attention Network 모델(텍스트 데이터에 적용)
+                        ✔ Hierarchical Attention Network 모델(텍스트 데이터에 적용)
         - title : 3. 주요 뉴스 추출 및 검색
           image : 
           description : >-
-                        ● HAN 모델에서 추출한 Attention extract model에서 추출한 Attention score가 높은 수 3개를 추출 
-                        ● 네이버 검색 API를 사용해 TOP3의 뉴스를 검색하여 TITLE, URL, DESCRIPTION 추출
+                        ✔ HAN 모델에서 추출한 Attention extract model에서 추출한 Attention score가 높은 수 3개를 추출 
+                        ✔ 네이버 검색 API를 사용해 TOP3의 뉴스를 검색하여 TITLE, URL, DESCRIPTION 추출
         - title : 4. 서비스 제공
           image : telegram.PNG
-          description : ● Telegram을 사용해 예측된 환율값과 주요뉴스(제목, url, 설명) 제공
+          description : ✔ Telegram을 사용해 예측된 환율값과 주요뉴스(제목, url, 설명) 제공
           
 # - project :
 #     print : True # If 'False' is selected, it will not be displayed in 'home.html > aside > .proj-content'. 
