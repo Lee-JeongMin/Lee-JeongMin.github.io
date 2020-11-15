@@ -60,3 +60,39 @@
           description : 문장의 어조 구하기
           image : tons_i.PNG
           description : tone_s를 이용해 문서 전체의 어조 구하기
+- project :
+    print : True # If 'False' is selected, it will not be displayed in 'home.html > aside > .proj-content'. 
+    modal : True # If 'True' is selected, modal can open in 'portfolio.html'. 
+    url :  https://github.com/kwonsuhan/Exchange-Rate-Caster # Full URL
+    image : model_architecture.PNG # path: assets/project/
+    date : 2020.09.11 - 2020.11.11
+    title : 수치 및 텍스트 데이터를 사용한 인공지능 모델 기반의 환율 예측 프로젝트
+    summary : 
+    description : 수치 및 텍스트(뉴스) 데이터를 사용해 환율 예측 및 주요 뉴스 추출 후 리포트 제공
+    contents : 
+        - title : 1. 데이터 수집 및 정제
+          image : 
+          description : 
+        - title : 2. 모델 학습
+          image : 
+          description : 
+        - title : 3. 주요 뉴스 추출 및 검색
+          image : 
+          description : 
+        - title : 4. 서비스 제공
+          image : 
+          description : 
+          
+# - project :
+#     print : True # If 'False' is selected, it will not be displayed in 'home.html > aside > .proj-content'. 
+#     modal : True # If 'True' is selected, modal can open in 'portfolio.html'. 
+#     url :   # Full URL
+#     image :  # path: assets/project/
+#     date : 2020.08.20 - 2020.09.19
+#     title : 개인 프로젝트 - 텍스트 마이닝을 통한 회사 부도 예측
+#     summary : 
+#     description : BOK 논문 구현처럼 회사를 검색해 나온 뉴스를 수집해 텍스트 마이닝을 거쳐 회사의 부도를 예측한다.
+#     contents : 
+#         - title : 
+#           image : 
+#           description : 
