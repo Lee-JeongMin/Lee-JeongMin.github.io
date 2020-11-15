@@ -74,11 +74,11 @@
     contents : 
         - title : 1. 데이터 수집 및 정제
           - image : numeric_preprocessing.png
-          - description : >-
+            description : >-
                           ● 환율과 관련있는 28개의 변수를 2010-01-01 ~ 2020-09-30 약 10년 데이터 수집
                           ● 휴일제거 & 미국시차를 한국시차로 맞춤
           - image : text_preprocessing.png
-          - description : >-
+           description : >-
                           ● 환율, 금리, 국내증시, 미국증시, 외국인투자 5개의 키워드를 선정하여 연합뉴스 기사제목 2010-01-01 ~ 2020-09-30 약 10년 데이터 수집
                             (* 2019년 기준 연합뉴스가 가장 제공량이 많음)
                           ● 휴일제거 & 중복기사 및 특수문자 제거
@@ -87,10 +87,10 @@
                           ● 기사제목 index 변환 및 padding 처리
         - title : 2. 모델 학습
           - image : darnn.PNG
-          - description : >-
+           description : >-
                           ● Dual-Stage Attention Based Recurrent Neural Network 모델 (수치 데이터에 적용)
           - image : han.PNG
-          - description : >-
+           description : >-
                           ● Hierarchical Attention Network 모델(텍스트 데이터에 적용)
         - title : 3. 주요 뉴스 추출 및 검색
           image : 
