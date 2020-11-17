@@ -74,7 +74,7 @@
     contents : 
         - title : 1. 데이터 수집 및 정제
         - image : numeric_preprocessing.png
-          description : |+
+          description : |
                         ㆍ 환율과 관련있는 28개의 변수를 2010-01-01 ~ 2020-09-30 약 10년 데이터 수집
                         ㆍ 휴일제거 & 미국시차를 한국시차로 맞춤
         - image : text_preprocessing.png
