@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Pandas - 특정 문자열로 시작하지 않는 행 추출
+title: 특정 문자열로 시작하지 않는 행 추출
 subtitle : 
 tags: [Pandas]
 author: JeongMin Lee

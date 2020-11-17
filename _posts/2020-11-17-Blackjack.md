@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Coding- 블랙잭(백준)
+title: 블랙잭_2798번(백준)
 subtitle : 
 tags: [Coding]
 author: JeongMin Lee
