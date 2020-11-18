@@ -76,8 +76,8 @@ for i in range(max(1, N-54), N+1):
 print(0)
 ```
 
-코드 작성자는 생성자의 범위를 N-54보다 크거나 같고 N보다 작거나 같다로 두어 반복의 수를 줄였다. 이유는 https://itadventure.tistory.com/158를 참고하면 좋을꺼같다.
+코드 작성자는 생성자의 범위를 N-54보다 크거나 같고 N보다 작거나 같다로 두어 반복의 수를 줄였다. 이유는 [https://itadventure.tistory.com/158](https://itadventure.tistory.com/158)를 참고하면 좋을꺼같다.
 
 또한, 나는 재귀함수를 사용해 분해합을 구했지만 본 코드 작성자는 `i + sum(list(map(int, str(i))))`을 사용해 합을 구한다.
 
-그 결과 효율성문제를 향상시킬 수 있다.
+∴  효율성을 향상시킬 수 있다.
