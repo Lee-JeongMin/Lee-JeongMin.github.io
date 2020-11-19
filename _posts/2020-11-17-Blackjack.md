@@ -86,3 +86,10 @@ num_ls = list(map(int, input().split()))
 print(blackjack_cardgame(N, M, num_ls))
 ```
 
+
+
+##### 알고리즘 분류
+
+------
+
+* 브루트포스 알고리즘
