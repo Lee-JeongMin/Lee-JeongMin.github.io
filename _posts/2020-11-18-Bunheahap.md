@@ -5,7 +5,6 @@ subtitle :
 tags: [Coding]
 author: JeongMin Lee
 comments : True
-
 ---
 
 ## 분해합(2231번)
