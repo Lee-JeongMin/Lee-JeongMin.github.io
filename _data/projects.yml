@@ -10,13 +10,13 @@
     contents :
         - title : 1. 드론으로 비디오 촬영 및 전송
           image :  
-          description : [https://github.com/choinamki/plant_anomaly_detection_dji_spark_drone](https://github.com/choinamki/plant_anomaly_detection_dji_spark_drone)
+          description : https://github.com/choinamki/plant_anomaly_detection_dji_spark_drone
         - title : 2. YOLOv3을 사용해 식물 이상 탐지
           image :  
-          description :  [https://jeongmin-lee.tistory.com/category/Capstone/2019-1%20Capstone](https://jeongmin-lee.tistory.com/category/Capstone/2019-1%20Capstone)
+          description :  https://jeongmin-lee.tistory.com/category/Capstone/2019-1%20Capstone
         - title : 3. GUI 구현
           image : 
-          description : [https://github.com/dudgns7675/Hotcorn](https://github.com/dudgns7675/Hotcorn)
+          description : https://github.com/dudgns7675/Hotcorn
 - project :
     print : True # If 'False' is selected, it will not be displayed in 'home.html > aside > .proj-content'. 
     modal : True # If 'True' is selected, modal can open in 'portfolio.html'. 
