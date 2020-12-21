@@ -101,6 +101,29 @@
           image : telegram.PNG
           description : ㆍ Telegram을 사용해 예측된 환율값과 주요뉴스(제목, url, 설명) 제공
           
+- project :
+    print : True # If 'False' is selected, it will not be displayed in 'home.html > aside > .proj-content'. 
+    modal : True # If 'True' is selected, modal can open in 'portfolio.html'. 
+    url :  https://github.com/Lee-JeongMin/NHhackathon_Android # Full URL
+    image :  workflow.jpg # path: assets/project/
+    date : 2020.12.11 - 2020.12.14
+    title : 농협 해커톤 - ZAEGO 플랫폼
+    summary : 
+    description : 농협 API와 AI를 사용해 리셀거래를 하고 거래를 통한 수익을 관리할 수 있는 ZAEGO플랫폼 개발
+    contents : 
+        - title : 핵심기능 1. 올원 프렌즈 성향 테스트
+          image : sc1.JPG
+          description : 
+        - title : 핵심기능 2. 리셀 자산관리_목표 자산
+          image : sc2_1.JPG
+          description : 
+        - title : 핵심기능 2. 리셀 자산관리_저금통
+          image : sc2_2.JPG
+          description : 
+        - title : 핵심기능 3. 리셀상품 시세예측
+          image : sc3.JPG
+          description : 
+
 # - project :
 #     print : True # If 'False' is selected, it will not be displayed in 'home.html > aside > .proj-content'. 
 #     modal : True # If 'True' is selected, modal can open in 'portfolio.html'. 
