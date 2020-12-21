@@ -87,15 +87,15 @@
                         ㆍ 기사제목 index 변환 및 padding 처리
         - title : 2. 모델 학습
         - image : darnn.PNG
-          description : |
+          description : 
                         ㆍ Dual-Stage Attention Based Recurrent Neural Network 모델 (수치 데이터에 적용)
         - image : han.PNG
-          description : |
+          description :
                         ㆍ Hierarchical Attention Network 모델(텍스트 데이터에 적용)
         - title : 3. 주요 뉴스 추출 및 검색
           image : 
-          description : |
-                        ㆍ HAN 모델에서 추출한 Attention extract model에서 추출한 Attention score가 높은 수 3개를 추출 
+          description :
+                        ㆍ HAN 모델에서 추출한 Attention extract model에서 추출한 Attention score가 높은 수 3개를 추출      
                         ㆍ 네이버 검색 API를 사용해 TOP3의 뉴스를 검색하여 TITLE, URL, DESCRIPTION 추출
         - title : 4. 서비스 제공
           image : telegram.PNG
@@ -113,7 +113,7 @@
     contents : 
         - title : 핵심기능 1. 올원 프렌즈 성향 테스트
           image : sc1.JPG
-          description : ㆍ 농협은행의 올원 프렌즈를 기반으로 5가지로 유형 분류          
+          description : ㆍ 농협은행의 올원 프렌즈를 기반으로 5가지로 유형 분류        
                         ㆍ 투자 상황을 일상생활에 빗대어 질문과 답변을 구성
         - title : 핵심기능 2. 리셀 자산관리_목표 자산
           image : sc2_1.JPG
