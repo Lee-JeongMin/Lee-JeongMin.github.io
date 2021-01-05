@@ -1,6 +1,6 @@
 ---
 layout: post
-title: _번(백준)
+title: 체스판 다시 칠하기_1018번(백준)
 subtitle : 
 tags: [Coding]
 author: JeongMin Lee
