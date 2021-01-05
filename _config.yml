@@ -40,7 +40,7 @@ theme_settings :
   disqus_shortname :
 
 # Pagination
-paginate: 10
+paginate: 7
 paginate_path: "blog/page:num"
 
 # Build Ssttings
