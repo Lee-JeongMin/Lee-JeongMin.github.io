@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [경제용어] 불완전판매(mis-selling)
+title: (경제용어) 불완전판매(mis-selling)
 subtitle : 
 tags: [Economy]
 author: JeongMin Lee

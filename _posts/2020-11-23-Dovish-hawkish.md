@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [경제용어] 매파 vs 비둘기파
+title: (경제용어) 매파 vs 비둘기파
 subtitle : 
 tags: [Economy]
 author: JeongMin Lee

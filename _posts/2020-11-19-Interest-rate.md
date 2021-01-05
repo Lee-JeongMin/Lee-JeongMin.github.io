@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [경제용어] 금리
+title: (경제용어) 금리
 subtitle : 
 tags: [Economy]
 author: JeongMin Lee
