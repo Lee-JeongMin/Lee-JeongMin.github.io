@@ -17,7 +17,7 @@ comments : True
 
 ##### Data flow
 
-![scrapy_architecture_02](../assets/img/scrapy_architecture_02.png)
+![scrapy_architecture_02](../assets/img/scrapy_architecture_02.jpg)
 
 1. `Engine`은 `Spider`로부터 초기 Requests를 받는다.
 2. `Engine`은  Requests를 `Scheduler`에 의해 스케줄링 된다.
