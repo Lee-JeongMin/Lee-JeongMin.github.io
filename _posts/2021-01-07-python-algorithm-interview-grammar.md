@@ -2,7 +2,7 @@
 layout: post
 title: 파이썬 알고리즘 인터뷰_파이썬 문법
 subtitle : 
-tags: [python algorithm]
+tags: [Python Algorithm]
 author: JeongMin Lee
 comments : True
 ---
