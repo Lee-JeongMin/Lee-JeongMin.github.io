@@ -44,11 +44,15 @@ foo = long_function_name(
 
 
 
+
+
 ##### 네이밍 컨벤션(Naming Convention)
 
 ------
 
 파이썬의 변수명은 각 단어를 밑줄(_)로 구분하여 표기하는 스네이크 케이스(Snake Case)를 따른다.
+
+
 
 
 
@@ -87,6 +91,8 @@ $ mypy solution.py # mypy 사용
 
 
 
+
+
 ##### 리스트 컴프리헨션(List Comprehension)
 
 ------
@@ -121,6 +127,8 @@ a = {}
 for key, value in original.items():
     a[key] = value
 ```
+
+
 
 
 
@@ -178,6 +186,8 @@ print('값 : {}, 타입 : {}'.format(g_value,type(g_value)))
 
 
 
+
+
 ##### range
 
 ------
@@ -228,6 +238,8 @@ b는 생성 조건만 보관하고 있기 때문에 a에 비해 메모리 점유
 
 
 
+
+
 ##### enumerate
 
 ------
@@ -251,6 +263,8 @@ a = ['a1', 'b1', 'c1']
 for idx, val in enumerate(a):
     print(idx, val)
 ```
+
+
 
 
 
@@ -285,6 +299,8 @@ divmod()함수를 사용하면 된다.
 divmod(5, 3)
 # (1, 2)
 ```
+
+
 
 
 
@@ -347,6 +363,8 @@ print(f'{idx+1}: {fruit}')
 
 
 
+
+
 ##### pass
 
 ------
@@ -356,6 +374,8 @@ pass의 기능은?
 * 널 연산으로 아무것도 하지 않는 기능이다.
 
 pass를 사용해 목업 인터페이스를 구현할 때 편리하다.
+
+
 
 
 
