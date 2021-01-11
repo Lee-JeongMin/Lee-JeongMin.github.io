@@ -46,9 +46,13 @@ html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/
 
 ------
 
-![big_O](../assets/img/big_O.jpg)
+{% highlight html %}
 
-![big_O_n](../assets/img/bigO_n.png){:.width-50}
+![big_O]({{site.baseurl}}/assets/img/big_O.jpg)
+
+![sample image]({{ site.baseurl }}/assets/img/bigO_n.jpg){: .width-30}
+
+![sample image]({{ site.baseurl }}/assets/img/koreaSunset.jpg)
 
 * O(1)
   * 상수시간(Constant Time)
