@@ -46,9 +46,9 @@ html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/
 
 ------
 
-<img src="../assets/img/big_O.jpg" alt="big_O" style="zoom:80%;" />
+![big_O](../assets/img/big_O.jpg)
 
-<img src="../assets/img/bigO_n.png" alt="bigO_n" style="zoom:48%;" />
+![big_O_n](../assets/img/bigO_n.png){:.width-50}
 
 * O(1)
   * 상수시간(Constant Time)
