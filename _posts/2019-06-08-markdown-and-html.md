@@ -23,6 +23,9 @@ you can easy to change style in `_utility.html` and a sample of the formatting f
 <h2>5. image</h2>
 Try using `.width-30`, `.width-40`, `.width-50`, `.width-60`, `.width-70` and `.width-80` class! You can easily change the image width.
 
-<br>![sample image](../assets/img/koreaSunset.jpg)
+![sample image](/assets/img/koreaSunset.jpg)
+
 <br>
+
+
 
