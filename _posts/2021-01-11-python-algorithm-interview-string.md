@@ -149,7 +149,7 @@ Result
 
 **문자열 슬라이싱**
 
-![example]({{ site.baseurl }}/assets/img/example.jpg){:.width-30}
+![example]({{ site.baseurl }}/assets/img/example.jpg){:.width-30 .align="left"}
 *↑슬라이싱에 사용할 예시 문장 및 인덱스*
 
 | 슬라이싱 방법 | 결과       | 설명                                                         |
