@@ -13,7 +13,7 @@ comments : True
 
 <<[파이썬 알고리즘 인터뷰](https://book.naver.com/bookdb/book_detail.nhn?bid=16406247) 서적 내용을 정리>>
 
-* [문제01 유효한 팰린드롬](#문제01유효한팰린드롬 )
+* [문제01 유효한 팰린드롬](#문제01-유효한-팰린드롬 )
 * 문제02
 * 문제03 
 * 문제04
@@ -22,7 +22,7 @@ comments : True
 
 <br/>
 
-##### 문제 01 유효한 팰린드롬 
+##### 문제01 유효한 팰린드롬 
 
 -----
 
@@ -149,7 +149,7 @@ Result
 
 **문자열 슬라이싱**
 
-![example]({{ site.baseurl }}/assets/img/example.jpg){:.width-20}
+![example]({{ site.baseurl }}/assets/img/example.jpg){:.width-30}
 *↑슬라이싱에 사용할 예시 문장 및 인덱스*
 
 | 슬라이싱 방법 | 결과       | 설명                                                         |
