@@ -21,7 +21,7 @@ comments : True
 
 ------
 
-<img src="../assets/img/py_type.jpg" alt="py_type" style="zoom:60%;" />
+<img src="{{ site.baseurl }}/assets/img/py_type.jpg" alt="py_type" style="zoom:60%;" />
 
 <br/>
 

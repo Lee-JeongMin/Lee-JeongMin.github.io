@@ -46,12 +46,17 @@ html header: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/
 
 ------
 
+![big_O]({{ site.baseurl }}/assets/img/big_O.jpg)
+
+![bigO_n]({{ site.baseurl }}/assets/img/bigO_n.png){: .width-60}
+
 
 * O(1)
+  
   * 상수시간(Constant Time)
   * 입력값이 아무리 커도 실행시간은 일정
-  * 예제 : 해시 테이블의 조회 및 삽입
-
+* 예제 : 해시 테이블의 조회 및 삽입
+  
 * O(log n)
 
   * 로그시간 또는 대수시간(Logarithmic)

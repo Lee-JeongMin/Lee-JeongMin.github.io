@@ -21,7 +21,7 @@ df = df[~df['today'].str.startswith('[알림]')]
 
 [알림]이라고 시작하는 컬럼을 제외한 나머지를 추출
 
-![result1](../assets/img/result1.PNG)
+![result1]({{ site.baseurl }}/assets/img/result1.PNG)
 
 * endswith와 contains도 가능
 

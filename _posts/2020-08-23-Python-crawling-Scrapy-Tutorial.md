@@ -57,7 +57,7 @@ scrapy crawl naver
 
 아래의 사진과 같이 결과가 출력된다.
 
-![naver_news](../assets/img/naver_news.PNG)
+![naver_news]({{ site.baseurl }}/assets/img/naver_news.PNG)
 
 모든 데이터를 가져왔다면 이제, 필요한 데이터만 수집해보자
 
@@ -129,5 +129,5 @@ class TutorialPipeline:
 code news.csv
 ```
 
-![naver_res](../assets/img/naver_res.PNG)
+![naver_res]({{ site.baseurl }}/assets/img/naver_res.PNG)
 

@@ -13,7 +13,7 @@ comments : True
 
 [`텐서플로우101`](https://opentutorials.org/course/4966)을 들으면서 내용을 정리해보았다.
 
-
+<br><br>
 
 ###### 1일차
 
@@ -27,9 +27,11 @@ comments : True
 
 * 101-3 지도학습의 빅픽쳐
 
-![지도학습 구조](../assets/img/%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5%20%EA%B5%AC%EC%A1%B0.PNG)
+![지도학습 구조]({{ site.baseurl }}/assets/img/%EC%A7%80%EB%8F%84%ED%95%99%EC%8A%B5%20%EA%B5%AC%EC%A1%B0.PNG)
 
 * 101-4 환경설정-Google Colaboratory
+
+<br>
 
 ###### 2일차
 
@@ -48,7 +50,7 @@ comments : True
 
 * 101-7 레모네이드 판매 예측
 
-  ![캡처](../assets/img/%EC%BA%A1%EC%B2%98.PNG)
+  ![캡처]({{ site.baseurl }}/assets/img/%EC%BA%A1%EC%B2%98.PNG)
 
   ###### 1. 과거의 데이터를 준비합니다.
 
@@ -71,7 +73,7 @@ comments : True
 
 * 101-8 손실의 의미
 
-  ![loss](../assets/img/loss.JPG)
+  ![loss]({{ site.baseurl }}/assets/img/loss.JPG)
 
   * loss : 모델의 출력값과 정답의 오차를 정의하는 함수
   * loss가 0에 가까울수록 학습이 잘된 경우
@@ -81,6 +83,8 @@ comments : True
   
   * 실습2-레모네이드 판매 예측
 
+<br>
+
 ###### 3일차
 
 * 101-10 보스턴집값 예측
@@ -88,12 +92,14 @@ comments : True
   * 데이터의 대표값으로 주로 사용되는 값은 '평균값', '중앙값'
 * 101-11 수식과 퍼셉트론
 
-![퍼셉트론](../assets/img/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0.JPG)
+![퍼셉트론]({{ site.baseurl }}/assets/img/%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0.JPG)
 
 * 101-12 보스턴 집값 예측 실습
   * 실습3 - 보스턴 집값 예측
 * 101-13 학습의 실제
   * 직접 엑셀로 값을 바꾸면서 해보니까 딥러닝의 원리를 알 수 있음
+
+<br>
 
 ###### 4일차
 
@@ -154,12 +160,14 @@ comments : True
     * 멀티클래스 분류에 사용
     * 종속변수가 0, 1, 2, 3, 4와 같이 정수의 형태로 제공될 때 사용
 
+<br>
+
 ###### 5일차
 
 * 101-18 히든레이어
   * 딥러닝(인공신경망) : 각각의 모델을 연속적으로 연결하여 하나의 거대한 신경망을 만드는 것
 
-![hidden_layer](../assets/img/hidden_layer.JPG)
+![hidden_layer]({{ site.baseurl }}/assets/img/hidden_layer.JPG)
 
 * 101-19 히든레이어 실습
   * 실습5-멀티레이어
@@ -182,6 +190,8 @@ comments : True
 
 
 
+<br>
 
+<br>
 
 * 모든 사진은 머신러닝 야학에서 발췌하였다. [기여자](https://opentutorials.org/course/4548/28953)에 들어가보면 교육을 만드는 데 도움을 주신분들을 확인해볼 수 있다.
