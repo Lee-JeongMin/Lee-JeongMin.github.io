@@ -333,3 +333,120 @@ class Solution:
 Result
 
 >  Runtime : 32ms, Memory : 14.4MB
+
+<br>
+
+##### 문제05 그룹 애너그램
+
+------
+
+> [https://leetcode.com/problems/group-anagrams](https://leetcode.com/problems/group-anagrams/)
+>
+> 문자열 배열을 받아 애너그램 단위로 그룹핑하라.
+>
+> **Example 1:**
+>
+> ```python
+> Input: strs = ["eat","tea","tan","ate","nat","bat"]
+> Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+> ```
+>
+> **Example 2:**
+>
+> ```python
+> Input: strs = [""]
+> Output: [[""]]
+> ```
+>
+> **Example 3:**
+>
+> ```python
+> Input: strs = ["a"]
+> Output: [["a"]]
+> ```
+
+* 풀이1_정렬하여 딕셔너리에 추가
+
+```python
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        anagrams = collections.defaultdict(list)
+        
+        for word in strs:
+            # 정렬하여 딕셔너리 추가
+            anagrams[''.join(sorted(word))].append(word)
+        return list(anagrams.values())
+```
+
+Result
+
+> Runtime : 92ms, Memory : 17.2MB
+
+<br>
+
+##### 문제06 가장 긴 팰린드롬 부분 문자열
+
+------
+
+> [https://leetcode.com/problems/longest-palindromic-substring](https://leetcode.com/problems/longest-palindromic-substring/)
+>
+> 가장 긴 팰린드롬 부분 문자열을 출력하라.
+>
+> **Example 1:**
+>
+> ```python
+> Input: s = "babad"
+> Output: "bab"
+> Note: "aba" is also a valid answer.
+> ```
+>
+> **Example 2:**
+>
+> ```python
+> Input: s = "cbbd"
+> Output: "bb"
+> ```
+>
+> **Example 3:**
+>
+> ```python
+> Input: s = "a"
+> Output: "a"
+> ```
+>
+> **Example 4:**
+>
+> ```python
+> Input: s = "ac"
+> Output: "a"
+> ```
+
+* 풀이1_중앙을 중심으로 확장하는 풀이
+
+```python
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        # 팰린드롬 판별 및 투 포인터 확장
+        def expand(left: int, right: int) -> str:
+            while left >= 0 and right < len(s) and s[left] == s[right]:
+                left -= 1
+                right += 1
+            return s[left + 1:right]
+        
+        # 해당 사항이 없을 때 빠르게 리턴
+        if len(s)<2 or s == s[::-1]:
+            return s
+        
+        result = ''
+        # 슬라이딩 윈도우 우측으로 이동
+        for i in range(len(s) - 1):
+            #  짝수는 2->4->6으로 확장, 홀수는 3-> 5->7로 확장
+            result = max(result, expand(i, i+1), expand(i, i+2), key=len)
+        return result
+```
+
+Result
+
+> Runtime : 248ms, Memory : 14.5MB
+
+![long_palindrome]({{ site.baseurl }}/assets/img/long_palindrome.gif)
