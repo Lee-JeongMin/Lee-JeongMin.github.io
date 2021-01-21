@@ -65,7 +65,7 @@ class Solution:
                     return [i,j]
 ```
 
-![ts]({{ site.baseurl }}/assets/img/ts.jpg)
+<img src="{{ site.baseurl }}/assets/img/ts.jpg" alt="ts" style="zoom: 33%;" />
 
 Result
 
