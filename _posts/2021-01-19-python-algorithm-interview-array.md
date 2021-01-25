@@ -162,7 +162,7 @@ Result
 
 ------
 
-> https://leetcode.com/problems/trapping-rain-water](https://leetcode.com/problems/trapping-rain-water/)
+> [https://leetcode.com/problems/trapping-rain-water](https://leetcode.com/problems/trapping-rain-water/)
 >
 > 높이를 입력받아 비 온 후 얼마나 많은 물이 쌓일 수 있는지 계산하라.
 >
