@@ -130,9 +130,8 @@ Result
   > list가 아닌  deque를 사용하는 이유?
   >
   > - 시간 복잡도 때문에! (참고 : [https://wiki.python.org/moin/TimeComplexity](https://wiki.python.org/moin/TimeComplexity))
-  > - (추가 설명 : )
-
-  ![deque]({{ site.baseurl }}/assets/img/deque.jpg)
+  
+![deque]({{ site.baseurl }}/assets/img/deque.jpg)
 
 <br>
 
