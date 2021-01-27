@@ -282,6 +282,8 @@ Result
 > Output: []
 > ```
 
+<br>
+
 * 풀이1_브루트 포스로 계산
 
 ```python
@@ -393,6 +395,8 @@ Result
 > Explanation: The optimal pairing is (2, 1), (2, 5), (6, 6). min(2, 1) + min(2, 5) + min(6, 6) = 1 + 2 + 6 = 9.
 > ```
 
+<br>
+
 * 내 풀이
 
 ```python
@@ -491,6 +495,8 @@ Result
 >Output: [24,12,8,6]
 > ```
 
+<br>
+
 * 풀이1_왼쪽 곱셈 결과에 오른쪽 값을 차례대로 곱셈
 
 ```python
@@ -541,6 +547,8 @@ Result
 > Output: 0
 >Explanation: In this case, no transactions are done and the max profit = 0.
 > ```
+
+<br>
 
 * 풀이1_브루트 포스로 계산
 

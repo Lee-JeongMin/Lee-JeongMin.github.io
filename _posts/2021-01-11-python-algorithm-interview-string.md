@@ -44,6 +44,8 @@ comments : True
 > Output: false
 > ```
 
+<br>
+
 * 내 코드
 
 ```python
@@ -201,6 +203,8 @@ Result
 > Output: ["h","a","n","n","a","H"]
 > ```
 
+<br>
+
 * 내 코드 & 풀이2_파이썬다운 방식
 
 ```python
@@ -259,6 +263,8 @@ Result
 > ```
 >
 
+<br>
+
 * 풀이1_람다와 +연산자를 이용
 
 ```python
@@ -301,6 +307,8 @@ Result
 > banned = ["hit"]
 > Output: "ball"
 > ```
+
+<br>
 
 * 내 코드
 
@@ -365,6 +373,8 @@ Result
 > Output: [["a"]]
 > ```
 
+<br>
+
 * 풀이1_정렬하여 딕셔너리에 추가
 
 ```python
@@ -420,6 +430,8 @@ Result
 > Input: s = "ac"
 > Output: "a"
 > ```
+
+<br>
 
 * 풀이1_중앙을 중심으로 확장하는 풀이
 
