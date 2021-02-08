@@ -15,431 +15,728 @@ comments : True
 
 * [문제01 섬의 개수](#문제01-섬의-개수)
 * [문제02 전화 번호 문자 조합](#문제02-전화-번호-문자-조합)
-* [문제03 중복 문자 없는 가장 긴 부분 문자열](#문제03-중복-문자-없는-가장-긴-부분-문자열)
-* [문제04 상위 K 빈도 요소](#문제04-상위-K-빈도-요소)
-* [문제05 해시맵 디자인](#문제01-해시맵-디자인)
-* [문제06 보석과 돌](#문제02-보석과-돌)
-* [문제07 중복 문자 없는 가장 긴 부분 문자열](#문제03-중복-문자-없는-가장-긴-부분-문자열)
-* [문제08 상위 K 빈도 요소](#문제04-상위-K-빈도-요소)
+* [문제03 순열](#문제03-순열)
+* [문제04 조합](#문제04-조합)
+* [문제05 조합의 합](#문제05-조합의-합)
+* [문제06 부분 집합](#문제06-부분-집합)
+* [문제07 일정 재구성](#문제07-일정-재구성)
+* [문제08 코스 스케줄](#문제08-코스-스케줄)
 
 <br>
 
-##### 문제01 해시맵 디자인
+##### 문제01 섬의 개수
 
 -----
 
-> [https://leetcode.com/problems/design-hashmap](https://leetcode.com/problems/design-hashmap/)
+> [https://leetcode.com/problems/number-of-islands](https://leetcode.com/problems/number-of-islands/)
 >
-> 다음의 기능을 제공하는 해시맵을 디자인하라.
+> 1을 육지로, 0을 물로 가정한 2D 그리드 맵이 주어졌을 때, 섬의 개수를 계산하라.
 >
-> * put(key, value) : 키, 값을 해시맵에 삽입한다. 만약 이미 존재하는 키하면 업데이트한다.  
-> * get(key) : 키에 해당되는 값을 조회한다. 만약 키가 존재하지 않는다면 -1을 리턴한다.
-> * remove(key) :키에 해당하는 키,값을 해시맵에서 삭제한다.
+> (연결되어 있는 1의 덩어리 개수를 구하라.)
 >
-> **Example 1:**
->
-> ```python
-> MyHashMap hashMap = new MyHashMap();
-> hashMap.put(1, 1);          
-> hashMap.put(2, 2);         
-> hashMap.get(1);            // returns 1
-> hashMap.get(3);            // returns -1 (not found)
-> hashMap.put(2, 1);          // update the existing value
-> hashMap.get(2);            // returns 1 
-> hashMap.remove(2);          // remove the mapping for 2
-> hashMap.get(2);            // returns -1 (not found) 
-> ```
->
-
-<br>
-
-* 풀이1_개별 체이닝 방식을 이용한 해시 테이블 구현
-
-```python
-class ListNode:
-    def __init__(self, key=None, value=None):
-        self.key = key
-        self.value = value
-        self.next = None
-        
-class MyHashMap:
-
-    def __init__(self):
-        # 초기화
-        self.size = 1000
-        self.table = collections.defaultdict(ListNode)
-
-    def put(self, key: int, value: int) -> None:
-        # 제산법 사용
-        index = key % self.size
-        
-        # 인덱스에 노드가 없다면 삽입 후 종료
-        if self.table[index].value is None:
-            self.table[index] = ListNode(key, value)
-            return
-        
-        # 인덱스에 노드가 존재하는 경우 연결 리스트 처리(개별 체이닝)
-        p = self.table[index]
-        while p:
-            if p.key == key:
-                p.value = value
-                return
-            if p.next is None:
-                break
-            p = p.next
-        p.next = ListNode(key, value)
-
-    # 조회
-    def get(self, key: int) -> int:
-        index = key % self.size
-        if self.table[index].value is None:
-            return -1
-        
-        # 노드가 존재할 때 일치하는 키 탐색
-        p = self.table[index]
-        while p:
-            if p.key == key:
-                return p.value
-            p = p.next
-        return -1
-        
-    # 삭제
-    def remove(self, key: int) -> None:
-        index = key % self.size
-        if self.table[index].value is None:
-            return
-        
-        # 인덱스의 첫 번째 노드일때 삭제 처리
-        p = self.table[index]
-        if p.key == key:
-            self.table[index] = ListNode() if p.next is None else p.next
-            return
-        # 연결 리스트 노드 삭제
-        prev = p
-        while p:
-            if p.key == key:
-                prev.next = p.next
-                return
-            prev, p = p, p.next
-
-```
-
-Result
-
->  Runtime : 220ms, Memory : 17.4MB
-
-<br>
-
-##### 문제02 보석과 돌
-
-------
-
-> [https://leetcode.com/problems/jewels-and-stones](https://leetcode.com/problems/jewels-and-stones/)
->
-> J는 보석이며, S는 갖고 있는 돌이다. S에는 보석이 몇 개나 있을까? 대소문자는 구분한다.
+> 섬은 물로 둘러싸여 있으며 격자의 네 모서리가 모두 물로 둘러싸여 있다.
 >
 > **Example 1:**
 >
 > ```python
-> Input: jewels = "aA", stones = "aAAbbbb"
-> Output: 3
-> ```
-> 
->   **Example 2:**
->   
->   ```python
-> Input: jewels = "z", stones = "ZZ"
-> Output: 0
-> ```
-> 
-
-<br>
-
-* 내 풀이 & 풀이3_Counter로 계산 생략
-
-```python
-class Solution:
-    def numJewelsInStones(self, jewels: str, stones: str) -> int:
-        _sum = 0
-        cnt = collections.Counter(stones)
-
-        for j in jewels:
-            _sum += cnt[j]
-
-        return _sum
-```
-
-Result
-
->  Runtime : 32ms, Memory : 14.1MB
-
-<br>
-
-* 풀이1_해시 테이블을 이용한 풀이
-
-```python
-class Solution:
-    def numJewelsInStones(self, jewels: str, stones: str) -> int:
-        freqs = {}
-        count = 0
-        
-        # 돌(stones)의 빈도수 계산
-        for char in stones:
-            if char not in freqs:
-                freqs[char] = 1
-            else:
-                freqs[char] += 1
-        
-        # 보석(jewels)의 빈도수 합산
-        for char in jewels:
-            if char in freqs:
-                count += freqs[char]
-        
-        return count
-```
-
-Result
-
->  Runtime : 24ms, Memory : 14.3MB
-
-<br>
-
-* 풀이2_defaultdict를 이용한 비교 생략
-
-```python
-class Solution:
-    def numJewelsInStones(self, jewels: str, stones: str) -> int:
-        freqs = collections.defaultdict(int)
-        count = 0
-        
-        # 비교 없이 돌(stones)의 빈도수 계산
-        for char in stones:
-            freqs[char] += 1
-        
-        # 비교 없이 보석(jewels)의 빈도수 합산
-        for char in jewels:
-                count += freqs[char]
-        
-        return count
-```
-
-Result
-
->  Runtime : 32ms, Memory : 14.4MB
-
-<br>
-
-* 풀이4_파이썬다운 방식
-
-```python
-class Solution:
-    def numJewelsInStones(self, jewels: str, stones: str) -> int:
-        return sum(s in jewels for s in stones)
-```
-
-Result
-
->  Runtime : 28ms, Memory : 14.3MB
-
-<br>
-
-##### 문제03 중복 문자 없는 가장 긴 부분 문자열
-
-------
-
-> [https://leetcode.com/problems/longest-substring-without-repeating-characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
->
-> 중복 문자가 없는 가장 긴 부분 문자열의 길이를 리턴하라.
->
-> **Example 1:**
->
-> ```python
-> Input: s = "abcabcbb"
-> Output: 3
-> Explanation: The answer is "abc", with the length of 3.
+> Input: grid = [
+>   ["1","1","1","1","0"],
+>   ["1","1","0","1","0"],
+>   ["1","1","0","0","0"],
+>   ["0","0","0","0","0"]
+> ]
+> Output: 1
 > ```
 >
 > **Example 2:**
 >
 > ```python
-> Input: s = "bbbbb"
-> Output: 1
-> Explanation: The answer is "b", with the length of 1.
+> Input: grid = [
+>   ["1","1","0","0","0"],
+>   ["1","1","0","0","0"],
+>   ["0","0","1","0","0"],
+>   ["0","0","0","1","1"]
+> ]
+> Output: 3
+> ```
+
+<br>
+
+* 풀이1_DFS로 그래프 탐색
+
+```python
+class Solution:
+    def numIslands(self, grid: List[List[str]]) -> int:
+        def dfs(i, j):
+            # 더 이상 땅이 아닌 경우 종료
+            if i < 0 or i >= len(grid) or \
+                j < 0 or j >= len(grid[0]) or \
+                grid[i][j] != '1':
+                    return
+            
+            grid[i][j] = 0
+            
+            # 동서남북 탐색
+            dfs(i+1, j)
+            dfs(i-1, j)
+            dfs(i, j+1)
+            dfs(i, j-1)
+            
+        count = 0
+        for i in range(len(grid)):
+            for j in range(len(grid[0])):
+                if grid[i][j] == '1':
+                    dfs(i, j)
+                    # 모든 육지 탐색 후 카운트 1 증가
+                    count += 1
+        return count
+```
+
+Result
+
+>  Runtime : 224ms, Memory : 15.5MB
+
+* grid가 아래와 같은 경우 그림으로 확인하는 알고리즘
+
+grid = [
+  ["1","1","0"],
+  ["1","1","0"],
+  ["0","0","0"]
+]
+
+<img src="{{ site.baseurl }}/assets/img/number_of_islands.gif" alt="number_of_islands" style="zoom:80%;" />
+
+<br>
+
+##### 중첩 함수
+
+> 중첩 함수란 함수 내에 위치한 또 다흔 함수로, 바깥에 위치한 함수들과 달리 부모 함수의 변수를 자유롭게 읽을 수 있다는 장점이 있다.
+
+```python
+def outer_function(t: str):
+    text : str = t
+    
+    def inner_function():
+        print(text)
+        
+    inner_function()
+outer_function('Hello!')
+# Hello!
+
+#outer_function()은 inner_function()을 호출했고, 아무런 파라미터도 넘기지 않았지만 부모 함수의 text 변수를 자유롭게 읽어들여 그 값인 Hello!를 출력했다.
+```
+
+<br>
+
+##### 문제02 전화 번호 문자 조합
+
+------
+
+> [https://leetcode.com/problems/letter-combinations-of-a-phone-number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)
+>
+> 2에서 9까지 숫자가 주어졌을 때 전화 번호로 조합 가능한 모든 문자를 출력하라.
+>
+> **Example 1:**
+>
+> ```python
+> Input: digits = "23"
+> Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
+> ```
+>
+> **Example 2:**
+>
+> ```python
+> Input: digits = ""
+> Output: []
 > ```
 >
 > **Example 3:**
 >
 > ```python
-> Input: s = "pwwkew"
-> Output: 3
-> Explanation: The answer is "wke", with the length of 3.
-> Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
-> ```
->
-> **Example 4:**
->
-> ```python
-> Input: s = ""
-> Output: 0
+> Input: digits = "2"
+> Output: ["a","b","c"]
 > ```
 
 <br>
 
-* 풀이1_슬라이딩 윈도우와 투 포인터로 사이즈 조절
+* 풀이1_모든 조합 탐색
 
 ```python
 class Solution:
-    def lengthOfLongestSubstring(self, s: str) -> int:
-        used = {}
-        max_length = start = 0
-        for index, char in enumerate(s):
-            # 이미 등장했던 문자라면 'start'위치 갱신
-            if char in used and start <= used[char]:
-                start = used[char] + 1
-            else:  # 최대 부분 문자열 길이 갱신
-                max_length = max(max_length, index - start + 1)
+    def letterCombinations(self, digits: str) -> List[str]:
+        def dfs(index, path):
+            # 끝까지 탐색하면 백트래킹
+            if len(path) == len(digits):
+                result.append(path)
+                return
             
-            # 현재 문자의 위치 삽입
-            used[char] = index
+            # 입력값 자릿수 단위 반복
+            for i in range(index, len(digits)):
+                # 숫자에 해당하는 모든 문자열 반복
+                for j in dic[digits[i]]:
+                    dfs(i+1, path+j)
+                    
+            
+        # 예외처리
+        if not digits:
+            return []
         
-        return max_length
+        dic = {"2": "abc", "3": "def", "4": "ghi", "5": "jkl",
+              "6": "mno", "7": "pqrs", "8": "tuv", "9": "wxyz"}
+        result = []
+        dfs(0, "")
+        
+        return result
 ```
 
 Result
 
->  Runtime : 48ms, Memory : 14.3MB
+>  Runtime : 48ms, Memory : 14.4MB
+
+<img src="{{ site.baseurl }}/assets/img/phone_number.gif" alt="phone_number" style="zoom:80%;" />
 
 <br>
 
-##### 문제04 상위 K 빈도 요소
+##### 문제03 순열
 
 ------
 
-> [https://leetcode.com/problems/top-k-frequent-elements](https://leetcode.com/problems/top-k-frequent-elements/)
+> [https://leetcode.com/problems/permutations](https://leetcode.com/problems/permutations/)
 >
-> k번 이상 등장하는 요소를 추출하라.( = 빈도 상위 k개 요소 추출 )
+> 서로 다른 정수를 입력받아 가능한 모든 순열을 리턴하라.
 >
 > **Example 1:**
 >
 > ```python
-> Input: nums = [1,1,1,2,2,3], k = 2
-> Output: [1,2]
+> Input: nums = [1,2,3]
+> Output: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
+> ```
+> 
+>**Example 2:**
+> 
+>```python
+> Input: nums = [0,1]
+> Output: [[0,1],[1,0]]
+> ```
+> 
+> **Example 3:**
+>
+> ```python
+>Input: nums = [1]
+> Output: [[1]]
+> ```
+> 
+
+<br>
+
+* 풀이1_DFS를 활용한 순열 생성
+
+```python
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        results = []
+        prev_elements = []
+        
+        def dfs(elements):
+            # 리프 노드일 때 결과 추가
+            if len(elements) == 0:
+                results.append(prev_elements[:])
+            
+            # 순열 생성 재귀 호출
+            for e in elements:
+                next_elements = elements[:]
+                next_elements.remove(e)
+                
+                prev_elements.append(e)
+                dfs(next_elements)
+                prev_elements.pop()
+                
+        dfs(nums)
+        return results
+```
+
+Result
+
+>  Runtime : 64ms, Memory : 14.4MB
+
+<br>
+
+* 풀이2_itertools 모듈 사용
+
+```python
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        return list(itertools.permutations(nums))
+```
+
+Result
+
+>  Runtime : 44ms, Memory : 14.3MB
+
+<br>
+
+##### 객체 복사
+
+> 파이썬의 중요한 특징 중 하나가 모든 것이 객체라는 점이다. 그러다 보니 별도로 값을 복사하지 않는 한, 변수에 값을 할당하는 모든 행위는 값 객체에 대한 참조가 된다.
+>
+> 그렇다면 참조가 되지 않도록 값 자체를 복사하려면 어떻게 해야할까?
+
+```python
+# 1) [:]로 처리하는 방법
+a = [1, 2, 3]
+b = a
+c = a[:]
+print(id(a), id(b), id(c))
+# 2907685897672 2907685897672 2907685897864
+
+# 2) copy()메소드를 사용하는 방법
+d = a.copy()
+print(id(a), id(b), id(c), id(d))
+# 2907685897672 2907685897672 2907685897864 2907685887880
+
+# 3) 복잡한 리스트는 copy.deepcopy()로 처리
+import copy
+a = [1, 2, [3, 5], 4]
+b = copy.deepcopy(a)
+print(id(a), id(b), b)
+# 2907685928328 2907685928136 [1, 2, [3, 5], 4]
+```
+
+<br>
+
+##### 문제04 조합
+
+------
+
+> [https://leetcode.com/problems/combinations](https://leetcode.com/problems/combinations/)
+>
+> 전체 수n을 입력받아 k개의 조합(combination)을 리턴하라.
+>
+> **Example 1:**
+>
+> ```python
+> Input: n = 4, k = 2
+> Output:
+> [
+>   [2,4],
+>   [3,4],
+>   [2,3],
+>   [1,2],
+>   [1,3],
+>   [1,4],
+> ]
 > ```
 >
 > **Example 2:**
 >
 > ```python
-> Input: nums = [1], k = 1
-> Output: [1]
+> Input: n = 1, k = 1
+> Output: [[1]]
 > ```
 
-* 내 코드
-
-```python
-class Solution:
-    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        freqs = collections.Counter(nums)
-        most = freqs.most_common(k)
-        return [key for key, val in most]
-```
-
-Result
-
->  Runtime : 108ms, Memory : 18.6MB
-
 <br>
 
-* 풀이1_Counter를 이용한 음수 순 추출
+* 풀이1_DFS로 k개 조합 생성
 
 ```python
 class Solution:
-    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        freqs_heap = []
-        freqs = collections.Counter(nums)
-        # 힙에 음수로 삽입
-        for f in freqs:
-            heapq.heappush(freqs_heap, (-freqs[f], f))
-            
-        topk = list()
-        # k번 만큼 추출, 최소 힙(Min Heap)이므로 가장 작은 음수 순으로 추출
-        for _ in range(k):
-            topk.append(heapq.heappop(freqs_heap)[1])
+    def combine(self, n: int, k: int) -> List[List[int]]:
+        results = []
         
-        return topk
+        def dfs(elements, start: int, k: int):
+            if k == 0:
+                results.append(elements[:])
+                return
+            
+            # 자신 이전의 모든 값을 고정하여 재귀 호출
+            for i in range(start, n + 1):
+                elements.append(i)
+                dfs(elements, i + 1, k - 1)
+                elements.pop()
+            
+        dfs([], 1, k)
+        return results
 ```
 
 Result
 
->  Runtime : 92ms, Memory : 18.8MB
+>  Runtime : 428ms, Memory : 15.8MB
 
 <br>
 
-* 풀이2_파이썬다운 방식
+* 풀이2_itertools 모듈 사용
 
 ```python
 class Solution:
-    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        return list(zip(*collections.Counter(nums).most_common(k)))[0]
+    def combine(self, n: int, k: int) -> List[List[int]]:
+        return list(itertools.combinations(range(1, n + 1), k))
 ```
 
 Result
 
->  Runtime : 112ms, Memory : 18.6MB
+>  Runtime : 92ms, Memory : 15.6MB
 
 <br>
 
-##### zip() 함수
+##### 순열과 조합
 
-> zip() 함수는 2개 이상의 시퀀스를 짧은 길이를 기준으로 일대일 대응하는 새로운 튜플 시퀀스를 만드는 역할
 
-```python
-a = [1, 2, 3, 4]
-b = ['a', 'b', 'c', 'd']
-c = ['ㄱ', 'ㄴ', 'ㄷ', 'ㄹ']
-list(zip(a,b,c))
-
-# [(1, 'a', 'ㄱ'), (2, 'b', 'ㄴ'), (3, 'c', 'ㄷ'), (4, 'd', 'ㄹ')]
-```
 
 <br>
 
-##### 아스테리스크(*)
+##### 문제05 조합의 합
 
-> 언팩(Unpack) 역할을 한다. 주로 튜플이나 리스트를 언패킹(풀어 헤치는 데) 사용한다.
+------
 
-```python
-fruits = ['lemon', 'pear', 'watermelon', 'tomato']
-
-# 1) 그냥 리스트 출력1
-print(fruits)
-# ['lemon', 'pear', 'watermelon', 'tomato']
-
-# 2) 그냥 리스트 출력2
-print(fruits[0], fruits[1], fruits[2], fruits[3])
-# lemon pear watermelon tomato
-
-# 3) for 반복문으로 순회하여 출력
-for f in fruits:
-    print(f, end=' ')
-# lemon pear watermelon tomato
-
-# 4) 아스테리스크(*) 사용하여 간편하게 출력
-print(*fruit)
-# lemon pear watermelon tomato
-```
+> [https://leetcode.com/problems/combination-sum](https://leetcode.com/problems/combination-sum/)
+>
+> 숫자 집합candidates를 조합하여 합이 target이 되는 원소를 나열하라. 각 원소는 중복으로 나열 가능하다.
+>
+> **Example 1:**
+>
+> ```python
+> Input: candidates = [2,3,6,7], target = 7
+> Output: [[2,2,3],[7]]
+> Explanation:
+> 2 and 3 are candidates, and 2 + 2 + 3 = 7. Note that 2 can be used multiple times.
+> 7 is a candidate, and 7 = 7.
+> These are the only two combinations.
+> ```
+>
+> **Example 2:**
+>
+> ```python
+> Input: candidates = [2,3,5], target = 8
+> Output: [[2,2,2,2],[2,3,3],[3,5]]
+> ```
+>
+> **Example 3:**
+>
+> ```python
+> Input: candidates = [2], target = 1
+> Output: []
+> ```
+>
+> **Example 4:**
+>
+> ```python
+> Input: candidates = [1], target = 1
+> Output: [[1]]
+> ```
+>
+> **Example 5:**
+>
+> ```python
+> Input: candidates = [1], target = 2
+> Output: [[1,1]]
+> ```
 
 <br>
 
-** 두개가 사용되는 경우는?
-
-> ** 두개가 사용되는 경우는 키/값 페어를 언패킹하는데 사용됨
+* 풀이1_DFS로 중복 조합 그래프 탐색
 
 ```python
-date_info = {'year': '2020', 'month': '01', 'day': '7'}
-new_info = {**date_info, 'day': '14'}
-print(new_info)
-# {'year': '2020', 'month': '01', 'day': '14'}
+class Solution:
+    def combinationSum(candidates, target):
+        result = []
+
+        # csum : 합을 갱신해 나갈 파라미터, index : 순서 파라미터, path : 지금까지의 탐색 경로
+        def dfs(csum, index, path):
+            # 종료 조건
+            if csum < 0: # 목표값을 초과한 경우로 탐색을 종료
+                return 
+            if csum == 0: # csum이 target값과 일치하는 정답이므로 결과 리스트에 추가하고 탐색을 종료
+                result.append(path)
+                return
+
+            # 자신 부터 하위 원소 까지의 나열 재귀 호출
+            for i in range(index, len(candidates)):
+                dfs(csum - candidates[i], i, path + [candidates[i]])
+                # 만약 문제가 순열이라면, dfs(csum - candidates[i], 0, path + [candidates[i]]) i를 0부터 시작해 첫번째 값부터 탐색하면 됨.
+
+        dfs(target, 0, [])
+        return result
 ```
 
+Result
 
+>  Runtime : 76ms, Memory : 14.3MB
 
+<br>
+
+##### 문제06 부분 집합
+
+------
+
+> [https://leetcode.com/problems/subsets](https://leetcode.com/problems/subsets/)
+>
+> 모든 부분 집합을 리턴하라.
+>
+> **Example 1:**
+>
+> ```python
+> Input: nums = [1,2,3]
+> Output: [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
+> ```
+>
+> **Example 2:**
+>
+> ```python
+> Input: nums = [0]
+> Output: [[],[0]]
+> ```
+
+<br>
+
+* 풀이1_트리의 모든 DFS 결과
+
+```python
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        result = []
+        
+        def dfs(index, path):
+            # 매번 결과 추가
+            result.append(path)
+            
+            # 경로를 만들면서 DFS
+            for i in range(index, len(nums)):
+                dfs(i+1, path + [nums[i]])
+                
+        dfs(0, [])
+        return result
+```
+
+Result
+
+>  Runtime : 36ms, Memory : 14.4MB
+
+<br>
+
+##### 문제07 일정 재구성
+
+------
+
+> [https://leetcode.com/problems/reconstruct-itinerary](https://leetcode.com/problems/reconstruct-itinerary/)
+>
+> [from, to]로 구성된 항공권 목록을 이용해 JFK에서 출발하는 여행 일정을 구성하라.
+>
+> 여러 일정이 있는 경우 사전 어휘 순으로 방문한다.
+>
+> **Example 1:**
+>
+> ```python
+> Input: [["MUC", "LHR"], ["JFK", "MUC"], ["SFO", "SJC"], ["LHR", "SFO"]]
+> Output: ["JFK", "MUC", "LHR", "SFO", "SJC"]
+> ```
+>
+> **Example 2:**
+>
+> ```python
+> Input: [["JFK","SFO"],["JFK","ATL"],["SFO","ATL"],["ATL","JFK"],["ATL","SFO"]]
+> Output: ["JFK","ATL","JFK","SFO","ATL","SFO"]
+> Explanation: Another possible reconstruction is ["JFK","SFO","ATL","JFK","ATL","SFO"].
+>              But it is larger in lexical order.
+> ```
+
+<br>
+
+* 풀이1_DFS로 일정 그래프 구성
+
+```python
+class Solution:
+    def findItinerary(self, tickets: List[List[str]]) -> List[str]:
+        graph = collections.defaultdict(list)
+        # 그래프 순서대로 구성
+        for a, b in sorted(tickets):
+            graph[a].append(b)
+            # defaultdict(<class 'list'>, {'ATL': ['JFK', 'SFO'], 'JFK': ['ATL', 'SFO'], 'SFO': ['ATL']})
+            
+        route = []
+        def dfs(a):
+            # 첫 번째 값을 읽어 어휘 순 방문
+            while graph[a]:
+                dfs(graph[a].pop(0))
+            route.append(a)
+            
+        dfs('JFK')
+        # 다시 뒤집어 어휘 순 결과로
+        return route[::-1]
+```
+
+Result
+
+>  Runtime : 80ms, Memory : 14.8MB
+
+<br>
+
+* 풀이2_스택 연산으로 큐 연상 최적화 시도
+
+```python
+class Solution:
+    def findItinerary(self, tickets: List[List[str]]) -> List[str]:
+        graph = collections.defaultdict(list)
+        # 그래프를 뒤집어서 구성
+        for a, b in sorted(tickets, reverse=True):
+            graph[a].append(b)
+            # defaultdict(<class 'list'>, {'SFO': ['ATL'], 'JFK': ['SFO', 'ATL'], 'ATL': ['SFO', 'JFK']})
+            
+        route = []
+        def dfs(a):
+            # 마지막 값을 읽어 어휘 순 방문
+            while graph[a]:
+                dfs(graph[a].pop())
+            route.append(a)
+            
+        dfs('JFK')
+        # 다시 뒤집어 어휘 순 결과로
+        return route[::-1]
+```
+
+Result
+
+>  Runtime : 76ms, Memory : 14.9MB
+
+<br>
+
+* 풀이3_일정 그래프 반복
+
+```python
+class Solution:
+    def findItinerary(self, tickets: List[List[str]]) -> List[str]:
+        graph = collections.defaultdict(list)
+        # 그래프 순서대로 구성
+        for a, b in sorted(tickets):
+            graph[a].append(b)
+            
+        route, stack = [], ['JFK']
+        while stack :
+            # 반복으로 스택을 구성하되 막히는 부분에서 풀어내는 처리
+            while graph[stack[-1]]:
+                stack.append(graph[stack[-1]].pop(0))
+            route.append(stack.pop())
+        
+        # 다시 뒤집어서 어휘 순 결과로
+        return route[::-1]
+```
+
+Result
+
+>  Runtime : 72ms, Memory : 14.6MB
+
+<br>
+
+##### 문제08 코스 스케줄
+
+------
+
+> [https://leetcode.com/problems/course-schedule](https://leetcode.com/problems/course-schedule/)
+>
+> 0을 완료하기 위해서는 1을 끝내야 한다는 것을 [0,1] 쌍으로 표현하는 n개의 코스가 있다. 코스 개수 n과 이 쌍들을 입력으로 받았을 때 모든 코스가 완료 가능한지 판별하라.
+>
+> **Example 1:**
+>
+> ```python
+> Input: numCourses = 2, prerequisites = [[1,0]]
+> Output: true
+> Explanation: There are a total of 2 courses to take. 
+> To take course 1 you should have finished course 0. So it is possible.
+> ```
+>
+> **Example 2:**
+>
+> ```python
+> Input: numCourses = 2, prerequisites = [[1,0],[0,1]]
+> Output: false
+> Explanation: There are a total of 2 courses to take. 
+> To take course 1 you should have finished course 0, and to take course 0 you should also have finished course 1. So it is impossible.
+> ```
+
+<br>
+
+* 풀이1_DFS로 순환 구조 판별
+
+```python
+class Solution:
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        graph = collections.defaultdict(list)
+        # 그래프 구성
+        for x, y in prerequisites:
+            graph[x].append(y)
+
+        traced = set()
+
+        def dfs(i):
+            # 순환 구조이면 False
+            if i in traced:
+                return False
+
+            traced.add(i)
+            for y in graph[i]:
+                if not dfs(y):
+                    return False
+            # 탐색 종료 후 순환 노드 삭제
+            traced.remove(i)
+
+            return True
+
+        # 순환 구조 판별
+        for x in list(graph):
+            if not dfs(x):
+                return False
+
+        return True
+```
+
+Result
+
+>  Time Limited Exeeceded
+
+<br>
+
+* 풀이2_가지치기를 이용한 최적화
+
+```python
+class Solution:
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        graph = collections.defaultdict(list)
+        # 그래프 구성
+        for x, y in prerequisites:
+            graph[x].append(y)
+
+        traced = set()
+        visited = set()
+        
+        def dfs(i):
+            # 순환 구조이면 False
+            if i in traced:
+                return False
+            # 이미 방문했던 노드이면 True
+            if i in visited:
+                return True
+            
+            traced.add(i)
+            for y in graph[i]:
+                if not dfs(y):
+                    return False
+            
+            # 탐색 종료 후 순환 노드 삭제
+            traced.remove(i)
+            # 탐색 종료 후 방문 노드 추가
+            visited.add(i)
+            
+            return True
+        
+        # 순환 구조 판별
+        for x in list(graph):
+            if not dfs(x):
+                return False
+        
+        return True
+```
+
+Result
+
+>  Runtime : 100ms, Memory : 17.9MB
+
+<br>
