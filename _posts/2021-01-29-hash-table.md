@@ -2,7 +2,7 @@
 layout: post
 title: 해시 테이블(hash table)
 subtitle : 
-tags: [Data Structure, Python]
+tags: [Algorithms & Data Structure, Python]
 author: JeongMin Lee
 comments : True
 ---
