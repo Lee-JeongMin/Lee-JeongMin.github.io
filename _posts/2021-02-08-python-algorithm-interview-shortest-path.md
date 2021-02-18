@@ -1,8 +1,13 @@
 ---
-
+layout: post
+title: 파이썬 알고리즘 인터뷰_최단 경로
+subtitle : 
+tags: [Python Algorithm]
+author: JeongMin Lee
+comments : True
 ---
 
-### 파이썬 알고리즘 인터뷰_최단 경로 문제
+### 파이썬 알고리즘 인터뷰_최단 경로
 
 -----
 
