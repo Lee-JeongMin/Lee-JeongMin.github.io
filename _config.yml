@@ -40,7 +40,8 @@ theme_settings :
     instagram:
 
   # Disqus
-  disqus_shortname :
+  disqus_shortname : 
+    comments : true
 
 # Pagination
 paginate: 7
